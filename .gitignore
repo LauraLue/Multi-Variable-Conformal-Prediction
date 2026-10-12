@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Environments and tooling
+.venv/
+venv/
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store
+
+# Datasets (download separately, see README)
+MCP/data/*.csv
+
+# Generated experiment output
+results/
+figures/
+tikz_figures/
+*.zip
+
+# Plots of the tests when run as scripts or with MCP_TEST_PLOTS=1
+tests/plots/

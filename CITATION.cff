@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "Multi-Variable Conformal Prediction"
+type: software
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/LauraLue/Multi-Variable-Conformal-Prediction"
+authors:
+  - family-names: "Lützow"
+    given-names: "Laura"
+    affiliation: "TU Munich & MCML, Germany"
+keywords:
+  - conformal prediction
+  - scenario optimization
+  - uncertainty quantification
+  - prediction sets
+preferred-citation:
+  type: conference-paper
+  title: "Multi-Variable Conformal Prediction: Optimizing Prediction Sets using Multiple Calibration Variables"
+  authors:
+    - family-names: "Lützow"
+      given-names: "Laura"
+      affiliation: "TU Munich & MCML, Germany"
+    - family-names: "Garatti"
+      given-names: "Simone"
+      affiliation: "Politecnico di Milano, Italy"
+    - family-names: "Campi"
+      given-names: "Marco C."
+      affiliation: "University of Brescia, Italy"
+    - family-names: "Lindemann"
+      given-names: "Lars"
+      affiliation: "ETH Zürich, Switzerland"
+    - family-names: "Althoff"
+      given-names: "Matthias"
+      affiliation: "TU Munich & MCML, Germany"
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS)"
+  conference:
+    name: "The Fortieth Annual Conference on Neural Information Processing Systems (NeurIPS 2026)"
+  year: 2026

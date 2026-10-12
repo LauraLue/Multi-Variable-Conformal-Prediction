@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-variable-conformal-prediction"
+version = "0.1.0"
+description = "Reference implementation of Multi-Variable Conformal Prediction (MCP)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Laura Lützow" }]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "scikit-learn>=1.3",
+    "cma>=3.3",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.10"]
+
+[tool.setuptools]
+packages = ["MCP", "MCP.data", "MCP.reporting"]
+
+[tool.setuptools.package-data]
+"MCP.data" = ["*.csv", "LICENSE_conformal_region_designer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "slow: long-running tests (CMA-ES fitting, union-of-ellipsoids H-RelMCP); deselect with -m 'not slow'",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["MCP"]
+known-local-folder = ["toy_problems"]
+
+[tool.ruff.lint.per-file-ignores]
+# Lines that write LaTeX code are kept unbroken for readability.
+"MCP/reporting/tikz.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["MCP"]
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+# Third-party libraries without type information.
+module = ["cma", "pandas", "scipy.*", "sklearn.*"]
+ignore_missing_imports = true
